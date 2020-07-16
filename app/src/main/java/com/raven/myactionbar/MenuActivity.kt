@@ -13,27 +13,5 @@ class MenuActivity : AppCompatActivity() {
         setContentView(R.layout.activity_menu)
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater = menuInflater
-        inflater.inflate(R.menu.options_menu, menu)
-        return true
-    }
 
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        when (item.itemId) {
-            R.id.menu1 -> {
-                supportFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, MenuFragment())
-                    .addToBackStack(null)
-                    .commit()
-                return true
-            }
-            R.id.menu2 -> {
-                val i = Intent(this, MenuActivity::class.java)
-                return true
-            }
-            else -> return true
-        }
-
-    }
 }
